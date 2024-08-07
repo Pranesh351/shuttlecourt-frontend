@@ -1,0 +1,2 @@
+/api/* https://shuttlecourt-backend.vercel.app/:splat 200
+/* /index.html 200

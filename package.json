@@ -1,5 +1,5 @@
 {
-  "proxy": "https://shuttlecourt-backend-jcgs.vercel.app/",
+  "proxy": "https://shuttlecourt-backend.vercel.app/",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
