@@ -5,9 +5,1686 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: azure;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  background-color: rgb(32, 112, 60);
+  border-color: rgba(0,0,0,0);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: 0.2%;
+  font-size: medium;
+  padding: 0.2%;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
+button:hover{
+  transform: scale(1.05);
+}
+button:hover:disabled{
+  transform: scale(1.02);
+}
+button:disabled{
+  background-color: rgb(225, 225, 204);
+  color: hsla(0, 0%, 0%, 0.575);
+}
+.navlink{
+  font-family:cursive;
+  font-weight:100;
+  font-size: larger;
+}
+a{
+  text-decoration: none;
+  color: rgb(10, 67, 19);
+  padding: 0.2%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+a:hover, button:hover{
+  cursor: pointer;
+}
+.navbar{
+  a{
+    text-decoration: none;
+    color: black;
+    padding: 0.2%;
+    font-family: 'Times New Roman', Times, serif;
+  }
+}
+.card{
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0.5px 0 7px;
+  border-radius: 25px;
+  background-color: white;
+  width: 30%;
+  @media only screen and (max-width: 600px) {width:75%}
+  text-align: center;
+  margin: auto;
+  input{
+    width: 80%;
+    @media only screen and (max-width: 600px) {width: 70%}
+    padding:3%;
+    margin: 4%;
+  }
+  button{
+    width: 50%;
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  .forgetPassword{
+    color: rgb(13, 157, 42);
+    text-align: left;
+    margin-left: 7%;
+    @media only screen and (max-width: 600px) {margin-left: 12%;}
+    cursor: pointer;
+  }
+  padding-bottom: 2%;
+}
+.checkBox{
+  input{
+    width: 14px;
+  }
+
+  width:fit-content;
+  @media only screen and (min-width: 600px) {margin-left: -54%;}
+  @media only screen and (max-width: 600px) {margin-left: -40%;}
+
+}
+.checkBoxSignup{
+  input{
+    width:fit-content;
+  }
+  @media only screen and (max-width: 600px) {margin-left: -8%;} 
+  margin-left: -18%;
+}
+.signInError{
+  color: brown;
+  margin-left: 10%;
+  border-radius: 5px;
+}
+.popup{
+  
+  margin: -10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0.5px 0 7px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: white;
+  @media only screen and (max-width: 600px) {
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    width: 300px;
+    margin-left: -50px;
+  }
+  form{
+    border: none;
+    box-shadow: none;
+    border-radius: 0%;
+    padding: 5%;
+    width: 90%;
+    margin: auto;
+    @media only screen and (max-width: 600px) {
+      border: none;
+      box-shadow: none;
+      border-radius: 0%;
+      padding: 5%;
+      width: 50%;
+      margin-left: -8px;
+    }
+  }
+  .card{
+    width: 500px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0%;
+    padding-right: 0%;
+    div{
+      border: none;
+      box-shadow: none;
+      border-radius: 0%;
+      padding-right: 0%;
+    }
+    .checkBox{
+      @media only screen and (min-width: 600px) {margin-left: -59%;}
+      @media only screen and (max-width: 600px) {margin-left: -28%;}
+    }
+  }
+}
+.popup-content.popCenter-content{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+.loginInfo{
+  color: green;
+  padding: 5%;
+  padding-top:50px;
+  @media only screen and (max-width: 600px) {padding-top:25px;}
+}
+.slotTime{
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  border-radius: 25px;
+  background-color: white;
+  width: fit-content;
+  text-align: center;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  padding: 1%;
+  color: black;
+  select{
+    margin-left:1% ;
+  }
+  h3{
+    font-size: larger;
+  }
+  img{
+    margin-bottom: -2px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+}
+.slot{
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15%;
+  @media only screen and (max-width: 600px) { 
+    grid-template-columns: 10% 10% 10%; 
+    margin-left: -93%;
+  }
+  grid-gap: 25px;
+  justify-content: center;
+  margin: 25px;
+}
+.slotForm{
+  text-align: left;
+  margin-left: 25%;
+  h4{
+    margin-bottom: -5%;
+    margin-top: 0%;
+  }
+  select{
+    margin-top: -5%;
+    margin-bottom: 5%;
+    width: 75%;
+    padding: 1%;
+  }
+  button{
+    margin-left: 10%;
+  }
+}
+.subscriptions{
+  display: flex;
+  justify-content:space-around;
+  padding: 2%;
+  width: 80vw;
+  @media only screen and (max-width: 600px) {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.subscription{
+  flex-direction: column;
+  transition: 0.25s ease;
+  margin: 5%;
+  text-align: center;
+  button{
+    margin-top: 5%;
+    padding: 2%;
+  }
+  img{
+    height: 240px;
+    width: 240px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  @media only screen and (max-width: 600px) {
+    width: 70%;
+    border: none;
+  }
+}
+.subscription:hover{
+  transform: scale(1.05);
+}
+.subscriptionCard{
+  width: 240px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  p{
+    margin: 0;
+  }
+  h3{
+    margin: 5px;
+  }
+}
+.subTopic{
+  padding: 5%;
+  padding-top: 1%;
+  margin-top: 0;
+  margin-bottom: -7%;
+  text-align: center;
+  font-size:xx-large;
+  color: rgb(7, 34, 19);
+}
+.navbarLogin{
+  width: 100vw;
+  overflow: hidden;
+  z-index: 900;
+  position: sticky;
+  top:0;
+  display: flex;
+  backdrop-filter: blur(50px);
+  height: 100px;
+  border-right: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0.5px 0 1px;
+  background-color: white;
+  
+  div{
+    display: flex;
+    margin-left:2vw ;
+    width: 300px;
+    a{
+      margin-right:5vw ;
+      font-size: large;
+      color: black;
+    }
+  }
+  .comNav{
+    margin-top: 40px;
+  }
+}
+.navbarLogout{
+  width: 100vw;
+  z-index: 900;
+  position:sticky;
+  top: 0;
+  display: flex;
+  backdrop-filter: blur(50px);
+  height: 100px;
+  border-right: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0.5px 0 1px;
+  background-color: white;
+
+  div{
+    display: flex;
+    margin-left:2vw ;
+    width: 500px;
+    a{
+      margin-right:5vw ;
+      font-size: large;
+      color: black;
+    }
+    img{
+      margin-left: 27vw;
+    }
+  }
+  .comNav{
+    margin-top: 35px;
+  }
+}
+.kebab{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.navBrand{
+  margin: 2%;
+  margin-right: 0;
+  margin-top: 4vh;
+  margin-left: 4vw;
+  font-size: xx-large;
+  width: 300px;
+  sub{
+    font-size:medium;
+  }
+  img{
+    width: 25px;
+    height: 40px;
+    margin-bottom: -5px;
+    margin-right: 2.5px;
+  }
+}
+.emailLogo{
+  width: 25px;
+  height: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: rgba(10, 255, 92, 0.463);
+  cursor: pointer;
+  margin-left: 45vw;
+  margin-top: -10px;
+  text-align: center;
+  border: 3px solid rgba(4, 255, 75, 0.2);
+  box-shadow: 0.2px 0.2px 0.2px;
+}
+.Page{
+  padding-top: 6vh;
+  background:none;
+  min-height: 600px;
+  min-height: auto;
+}
+.popup-content{
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  svg{
+    width: 0;
+  }
+  a{
+    outline: none;
+  }
+}
+#popup.navPopupLogoff{
+  z-index: 2000;
+  top: 70px;
+  position: fixed;
+  border: 1px solid black;
+  box-shadow: 0.5px 0 5px rgba(0, 0, 0, 0.084);
+  border-radius: 7px;
+  background-color: white;
+  width:200px;
+  height:230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  button{
+    width: 150px;
+    padding: 7%;
+  }
+  a{
+    margin: 10%;
+  }
+  span{
+    margin: 1%;
+  }
+}
+#popup.navPopupLogin{
+  z-index: 2000;
+  top:70px;
+  position: fixed;
+  border: 1px solid black;
+  box-shadow: 0.5px 0 5px rgba(0,0,0,0.4);
+  border-radius: 7px;
+  background-color: white;
+  width:200px;
+  height:280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  hr{
+    color: rgba(72, 67, 67, 0.226);
+    border: none;
+    height: 2px;
+    background-color: rgba(72, 67, 67, 0.226);
+  }
+  button{
+    width: 70%;
+    padding: 5%;
+    margin-top: 1%;
+  }
+  a{
+    margin: 7%;
+  }
+  span{
+    margin: 1%;
+  }
+  img{
+    width: 60px;
+    height: 70px;
+  }
+}
+.availedSubscription{
+  flex-direction: column;
+  transition: 0.25s ease;
+  margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  button{
+    margin-top: 5%;
+    padding: 2%;
+  }
+  img{
+    height: 180px;
+    width: 220px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  @media only screen and (max-width: 600px) {
+    width: 70%;
+    border: none;
+  }
+}
+.availedSubscription:hover{
+  transform: scale(1.05);
+}
+.noSubCard{
+  text-align: center;
+  margin-top: 50px;
+}
+.subCard{
+  box-sizing: border-box;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  width: 220px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  p{
+    margin: 6px;
+  }
+  h3{
+    margin: 5px;
+  }
+}
+.mySlot{
+  text-align: center;
+}
+.slotCard{
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 20px;
+  margin-bottom: 50px;
+  margin-top: 3%;
+  padding: 0;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 80%;
+  }
+}
+.subSlot{
+  align-self:center;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 100px;
+}
+.subSlot:hover{
+  width: 302px;
+  background-color: rgb(243, 243, 243);
+}
+.subSlotHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3%;
+  h4{
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+  img{
+    width:15px;
+    margin: 7px;
+  }
+  img:hover{
+    transform: scale(1.1);
+  }
+}
+.subSlotContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+.contact{
+  margin: auto;
+  width: 80%;
+  height: 500px;
+  padding-left: 15%;
+  padding-top: 3%;
+  h1{
+    color: rgb(52, 52, 52);
+  }
+}
+.contactSub{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  img{
+    width:50px;
+    height: 50px;;
+    border-radius: 50%;
+    background-color: rgb(11, 6, 46);
+  }
+  div{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    width:280px;
+    height: 280px;
+    background-color: white;
+    margin-top: 3%;
+    margin-right: 2%;
+    padding: 2%;
+    button{
+      padding: 1%;
+      width: 90%;
+      height: 40px;
+      margin: 5%;
+    }
+    p{
+      height: 70px;
+    }
+  }
+  div:hover{
+    transform: scale(1.01);
+  }
+}
+.features{
+  margin-top: -5%;
+  text-align: center;
+  padding: 5%;
+}
+.subFeatures{
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: white;
+  padding-bottom: 5%;
+  h3{
+    padding: 5%;
+  }
+  span{
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    grid-gap:15%;
+    margin-left: 10%;
+    height: 500px;
+  }
+  img{
+    width: 50px;
+    height:50px;
+  }
+}
+.supportTop{
+  display: flex;
+  text-align: center;
+  height: 400px;
+  width: 100vw;
+  div{
+    width: 800px;
+    margin: auto;
+  }
+  h1{
+    margin-top: -20%;
+  }
+}
+.supportInfo{
+  display: flex;
+  div{
+    border: 1.5px solid rgb(105, 104, 104);
+    border-radius: 5px;
+    padding: 2%;
+    margin-right: 3%;
+    height: 250px;
+    width:40%;
+    background-color: rgb(203, 205, 177);
+    h2{
+      color: rgb(51, 35, 14);
+    }
+  }
+}
+.supportQA{
+  text-align: center;
+  div{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    margin: auto;
+    grid-gap: 3%;
+    margin-left: 1%;
+    div{
+      border-radius: 5px;
+      border: 1px solid rgb(105, 104, 104);
+      width: 400px;
+      height: 200px;
+      padding: 1%;
+      display: block;
+      background-color: rgb(129, 187, 189);
+    }
+  }
+}
+.supportFooter{
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  button{
+    width: 150px;
+    padding: 1%;
+  }
+}
+.about{
+  display: flex;
+  text-align: left;
+  margin: 10%;
+  padding: 10%;
+  padding-top: 5%;
+  margin-top: 0;
+  background-color: white;
+  div{
+    img{
+      width:250px;
+      height: 250px;
+      margin-top: 7%;
+    }
+  }
+  a{
+    img{
+      width: 20px;
+      height: 20px;
+      margin-left: 5%;
+      margin-top: 0;
+    }
+  }
+  button{
+    padding: 2%;
+    width: 120px;
+    border-radius: 0;
+    margin-bottom: 5%;
+  }
+}
+.aboutContent{
+  width: 500px;
+  margin-right: 5%;
+}
+.footer{
+  margin-top: 2%;
+  background-color: rgb(28, 28, 28);
+  color: rgb(203, 203, 203);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  a{
+    color: rgb(165, 162, 162);
+    font-size: large;
+  }
+  h2{
+    color: white;
+  }
+  p{
+    font-size: small;
+  }
+}
+.footerContent{
+  display: flex;
+  justify-content: space-between;
+  img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5%;
+    margin-top: 0;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    a{
+      margin-bottom: 20px;
+    }
+  }
+}
+.footerIcon{
+  div{
+    display: block;
+  }
+  img{
+    margin: auto;
+    margin-right: 20%;
+  }
+}
+.sliderContainer{
+  width: 550px;
+  height: 330px;
+  margin: 0 auto;
+  margin-top: -100px;
+}
+.slideStyles{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  filter: blur(0.2px);
+  z-index: 0;
+  text-align: center;
+  div{
+    padding-top: 180px;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    font-size: larger;
+  }
+}
+.sliderStyles{
+  margin-top: 0;
+  height: 100%;
+  position: relative;
+}
+.leftArrow{
+  position: relative;
+  top:306px;
+  transform: translate(0, -50%);
+  left: 35px;
+  font-size: 45px;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(214, 235, 77, 0.505);
+  border-radius: 5%;
+  width:min-content;
+  height:min-content;
+  padding-bottom: 1.2%;
+}
+.rightArrow{
+  position: relative;
+  top:240px;
+  transform: translate(0, -50%);
+  left: 480px;
+  right: 300px;
+  font-size: 45px;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(214, 235, 77, 0.505);
+  border-radius: 5%;
+  width:min-content;
+  height:min-content;
+  padding-bottom: 1.2%;
+}
+.slidePointer{
+  display: flex;
+  justify-content: center;
+  div{
+    margin: o 3px;
+    cursor: pointer;
+    font-size: 100px;
+    margin-top: -80px;
+  }
+}
+.getStarted{
+  margin: auto;
+  button{
+    margin: 10px;
+    margin-left: 41%;
+    padding: 10px;
+    border-radius: 0;
+  }
+}
+.help{
+  width:50px;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+}
+#popup.helpPopup{
+  z-index: 2000;
+  position: fixed;
+  top: 500px;
+  left: 1050px;
+  background-color: white;
+  box-shadow: 0.5px 0 5px rgba(0, 0, 0, 0.084);
+  border: 1px solid black;
+  border-radius: 7px;
+  width:150px;
+  height:80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  a{
+    padding: 10px;
+  }
+}
+.popupContent{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  div{
+    margin: 10px;
+  }
+  button{
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.emailLogoMob{
+  display: none;
+}
+.hamburger{
+  display: none;
+}
+.navBrand{
+  width:160px;
+}
+
+@media only screen and (max-width: 1152px){
+  .emailLogo{
+    margin-left: 100px;
+  }
+  .subscriptions{
+    flex-direction: column;
+    margin: auto;
+    align-items:center ;
+  }
+  .slot{
+    width: 250px;
+    grid-template-columns: 90px 90px 90px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .slotTime{
+    width: 90vw;
+    margin: auto;
+    margin-top: 300px;
+  }
+  #popup.helpPopup{
+    position: fixed;
+    right: 90px;
+    left:auto;
+    top:auto;
+    bottom: 120px;
+  }
+  .navbarLogout{
+    div{
+      img{
+        margin-left: -20px;
+      }
+    }
+  }
+  .supportTop{
+    width:600px;
+    margin: auto;
+    margin-top: 30px;
+    flex-direction: column;
+    div{
+      width: 200px;
+    }
+    p,h1{
+      width: 600px;
+    }
+  }
+  div.supportHeader{
+    margin-left: 0;
+    width: 250px
+  }
+  div.supportInfo{
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    div{
+      height: 200px;
+    }
+    p{
+      height: 300px;
+    }
+    h2{
+      font-size: medium;
+    }
+    p{
+      font-size: small;
+      width: 200px;
+      height: auto;
+    }
+  }
+  .supportQA{
+    margin-bottom: 200px;
+    div{
+      margin-left: 50px;
+      grid-template-columns: 400px;
+    }
+  }
+  .slotCard{
+    grid-template-columns: 300px 300px;
+    grid-gap: 10px;
+    margin: auto;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  .page{
+    background-color: rgb(29, 109, 7);
+  }
+  .emailLogo{
+    display: none;
+  }
+  .emailLogoMob{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(10, 255, 92, 0.463);
+    cursor: pointer;
+    margin:auto;
+    margin-left: 5px;
+    text-align: center;
+    border: 3px solid rgba(4, 255, 75, 0.2);
+    box-shadow: 0.2px 0.2px 0.2px;
+  }
+  .navbarLogin{
+    justify-content: space-between;
+    a{
+      display: none;
+    }
+    .navBrand{
+      display: inline;
+      width:300px;
+    }
+    div{
+      width:100px;
+      margin: 0;
+      img{
+        margin-left: auto;
+      }
+    }
+  }
+  #popup.navPopupLogin{
+    position: fixed;
+    top:80px;
+    height: 420px;
+  }
+  .kebab{
+    display:none;
+  }
+  .hamburger{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin:auto;
+  }
+  .navbarLogout{
+    justify-content: space-between;
+    a{
+      display: none;
+    }
+    .navBrand{
+      display: inline;
+      width:300px;
+    }
+    div{
+      width:100px;
+      margin: auto;
+      img{
+        margin-left: auto;
+      }
+    }
+  }
+  #popup.navPopupLogoff{
+    top:80px;
+    height: 520px;
+  }
+  .footer{
+    overflow: hidden;
+    h2{
+      font-size: small;
+    }
+    a{
+      font-size: smaller;
+    }
+  }
+  .about{
+    flex-direction: column;
+    align-items: center;
+    .aboutContent{
+      width: auto;
+    }
+  }
+  .supportTop{
+    margin-top: 200px !important;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    h1{
+      font-size: medium;
+      margin-left: 0;
+    }
+    p{
+      margin-left: 0;
+      font-size: small;
+    }
+  }
+  .supportInfo{
+    margin-left: 0;
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px !important;
+    div{
+      margin-left: 0;
+      margin-bottom: 25px;
+    }
+  }
+  .supportQA{
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+  .supportFooter{
+    margin-top: 10px;
+  }
+  .contact{
+    background-image: none;
+    padding: 0;
+    margin-bottom: 200px;
+    align-items: center;
+  }
+  .contactSub{
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding: auto;
+    div{
+      margin-bottom: 10px;
+    }
+  }
+  .help{
+    bottom: 50px;
+    right: 20px;
+  }
+  .slotTime{
+    width: 90vw;
+    margin: auto;
+    margin-top: 300px;
+  }
+  .slot{
+    width: 250px;
+    grid-template-columns: 90px 90px 90px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .sliderContainer{
+    width:400px;
+    height: 225px;
+    margin: 0 auto;
+    margin-top: -100px;
+  }
+  .rightArrow{
+    height: 50px;
+    width:20px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 350px;
+    top: 165px;
+    border: none;
+  }
+  .leftArrow{
+    top:225px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 10px;
+  }
+  .slideStyles{
+    div{
+      margin: auto;
+      padding-top: 140px;
+      h1{
+        font-size: large;
+      }
+      p{
+        font-size: medium;
+      }
+    }
+  }
+  .getStarted{
+    button{
+      margin: auto;
+      margin-left: 25vw;
+    }
+  }
+  .subFeatures{
+    height: auto;
+    span{
+      grid-template-columns: 200px;
+      height: auto;
+      grid-gap: 0;
+    }
+  }
+  .subSlot:hover{
+    width: 252px;
+  }
+  .subSlotHeader{
+    padding-bottom: 0;
+  }
+  .subSlot{
+    width: 250px;
+    margin: auto;
+  }
+  .slotP{
+    width: 250px !important;
+  }
+  .help{
+    width: 30px;
+  }
+  #popup.helpPopup{
+    position: fixed;
+    right: 50px;
+    left:auto;
+    top:auto;
+    bottom: 75px;
+  }
+  .popup{
+    form{
+      width: 200px;
+      margin-left: 0px;
+      padding-left: 40px;
+      p{
+        margin-left: -25px;
+      }
+    }
+    width: 250px;
+      div{
+        width: 200px;
+        background-color: transparent;
+      }
+      div.signInLink{
+        width: 225px;
+        margin-left: -15px;
+      }
+  }
+  .slotForm{
+    h4, select{
+      margin-left: -25px;
+    }
+    select{
+      width:180px;
+    }
+    button{
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
+  div.slotForm{
+    margin: auto;
+    margin-left: 25px;
+  }
+  div.slotPrice{
+    margin-left: -30px;
+    width: 225px;
+    div{
+      width: 225px;
+    }
+  }
+  .slotCard{
+    grid-template-columns: 300px;
+    grid-gap: 10px;
+    margin: auto;
+    margin-left: 0;
+  }
+  
+}
+
+
+@media only screen and (max-width: 400px){
+  .emailLogo{
+    display: none;
+  }
+  .emailLogoMob{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(10, 255, 92, 0.463);
+    cursor: pointer;
+    margin:auto;
+    margin-left: 5px;
+    text-align: center;
+    border: 3px solid rgba(4, 255, 75, 0.2);
+    box-shadow: 0.2px 0.2px 0.2px;
+  }
+  .navbarLogin{
+    justify-content: space-between;
+    a{
+      display: none;
+    }
+    .navBrand{
+      display: inline;
+      width:300px;
+    }
+    div{
+      width:100px;
+      margin: 0;
+      img{
+        margin-left: auto;
+      }
+    }
+  }
+  #popup.navPopupLogin{
+    position: fixed;
+    top:80px;
+    height: 420px;
+  }
+  .kebab{
+    display:none;
+  }
+  .hamburger{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin:auto;
+  }
+  .navbarLogout{
+    justify-content: space-between;
+    a{
+      display: none;
+    }
+    .navBrand{
+      display: inline;
+      width:300px;
+    }
+    div{
+      width:100px;
+      margin: auto;
+      img{
+        margin-left: auto;
+      }
+    }
+  }
+  #popup.navPopupLogoff{
+    top:80px;
+    height: 520px;
+  }
+  .footer{
+    overflow: hidden;
+    h2{
+      font-size: small;
+    }
+    a{
+      font-size: smaller;
+    }
+  }
+  .about{
+    flex-direction: column;
+    align-items: center;
+    .aboutContent{
+      width: auto;
+    }
+  }
+  .supportFooter{
+    margin-top: 200px;
+  }
+  .contact{
+    background-image: none;
+    padding: 0;
+    margin-bottom: 200px;
+    align-items: center;
+  }
+  .contactSub{
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding: auto;
+    div{
+      margin-bottom: 10px;
+    }
+  }
+  .help{
+    bottom: 50px;
+    right: 20px;
+  }
+  .slotTime{
+    width: 280px;
+    margin: auto;
+    margin-top: 300px;
+  }
+  .slot{
+    width: 250px;
+    grid-template-columns: 100px 100px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .sliderContainer{
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: -100px;
+  }
+  .rightArrow{
+    left:210px;
+    height: 50px;
+    width:20px;
+    background-color: rgba(255, 255, 255, 0);
+    top:120px;
+    border: none;
+  }
+  .leftArrow{
+    top:189px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 10px;
+  }
+  .slideStyles{
+    div{
+      margin: auto;
+      padding-top: 85px;
+      h1{
+        font-size: medium;
+      }
+      p{
+        font-size: small;
+      }
+    }
+  }
+  .getStarted{
+    button{
+      margin: auto;
+      margin-left: 25vw;
+    }
+  }
+  .subFeatures{
+    height: auto;
+    span{
+      grid-template-columns: 200px;
+      height: auto;
+      grid-gap: 0;
+    }
+  }
+  .subSlot:hover{
+    width: 252px;
+  }
+  .subSlotHeader{
+    padding-bottom: 0;
+  }
+  .subSlot{
+    width: 250px;
+    margin: auto;
+  }
+  .slotP{
+    width: 250px !important;
+  }
+  .help{
+    width: 30px;
+  }
+  #popup.helpPopup{
+    position: fixed;
+    right: 50px;
+    left:auto;
+    top:auto;
+    bottom: 75px;
+  }
+  .popup{
+    form{
+      width: 200px;
+      margin-left: 0px;
+      padding-left: 40px;
+      p{
+        margin-left: -25px;
+      }
+    }
+    width: 250px;
+      div{
+        width: 200px;
+        background-color: transparent;
+      }
+      div.signInLink{
+        width: 225px;
+        margin-left: -15px;
+      }
+  }
+  .slotForm{
+    h4, select{
+      margin-left: -25px;
+    }
+    select{
+      width:180px;
+    }
+    button{
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
+  div.slotForm{
+    margin: auto;
+    margin-left: 25px;
+  }
+  div.slotPrice{
+    margin-left: -30px;
+    width: 225px;
+    div{
+      width: 225px;
+    }
+  }
+  .slotCard{
+    grid-template-columns: 300px;
+    grid-gap: 10px;
+    margin: auto;
+    margin-left: 0;
+  }
+  .supportTop{
+    margin-top: 200px !important;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    h1{
+      font-size: medium;
+      margin-left: 0;
+    }
+    p{
+      margin-left: 0;
+      font-size: small;
+      margin-bottom: 100px;
+    }
+  }
+  .supportInfo{
+    margin-left: 0;
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    div{
+      margin-left: 0;
+    }
+  }
+  .supportQA{
+    div{
+      margin: 0;
+      width:100vw;
+    }
+  }
+}
+@media only screen and (max-Height: 350px){
+  .navbarLogout{
+    div{
+      img{
+        margin-left: -20px;
+      }
+    }
+  }
+  .slotTime{
+    width: 600px;
+  }
+  .slot{
+    width: 600px;
+    margin-left: 0;
+  }
+  .subscriptions{
+    flex-direction: column;
+    align-items: center;
+  }
+  .subFeatures{
+    height: 700px;
+  }
+  .supportTop{
+    width:600px;
+    margin: auto;
+    margin-top: 30px;
+    flex-direction: column;
+    div{
+      width: 200px;
+    }
+    p,h1{
+      width: 600px;
+    }
+  }
+  div.supportHeader{
+    margin-left: 0;
+    width: 250px
+  }
+  div.supportInfo{
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    div{
+      height: 200px;
+    }
+    p{
+      height: 300px;
+    }
+    h2{
+      font-size: medium;
+    }
+    p{
+      font-size: small;
+      width: 200px;
+      height: auto;
+    }
+  }
+  .supportQA{
+    margin-bottom: 200px;
+    div{
+      margin-left: 50px;
+      grid-template-columns: 400px;
+    }
+  }
+  .slotCard{
+    grid-template-columns: auto;
+    margin-left: -25px;
+  }
+  .emailLogo{
+    margin-left: 100px;
+  }
+  .navbarLogin{
+    position: static;
+  }
+  #popup.navPopupLogin{
+    position: static;
+  }
+  #popup.helpPopup{
+    position: fixed;
+    right: 75px;
+    left:auto;
+    top:auto;
+    bottom: 100px;
+  }
+  .help{
+    width: 30px;
+  }
+  .card{
+    width: 250px;
+  }
+  label.checkBox{
+    padding-left: 40px;
+  }
+  label.checkBoxSignup{
+    padding-left: 30px;
+  }
+  .popup{
+    form{
+      width: 200px;
+      margin-left: 20px;
+      p{
+        margin-left: -25px;
+      }
+    }
+    width: 250px;
+      div{
+        width: 200px;
+        background-color: transparent;
+      }
+      div.signInLink{
+        width: 225px;
+        margin-left: -15px;
+      }
+  }
+  .slotForm{
+    h4, select{
+      margin-left: -25px;
+    }
+    select{
+      width:180px;
+    }
+    button{
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
+  div.slotForm{
+    margin: auto;
+    margin-left: 25px;
+  }
+  div.slotPrice{
+    margin-left: -30px;
+    width: 225px;
+    div{
+      width: 225px;
+    }
+  }
 }

@@ -4,10 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import AuthContextProvider from './context/authContext';
+import SubscriptionContextProvider from './context/subscriptionContext';
+import SlotContextProvider from './context/slotContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+
+    <AuthContextProvider>
+      <SubscriptionContextProvider>
+        <SlotContextProvider>
+          <App />
+        </SlotContextProvider>
+      </SubscriptionContextProvider>
+    </AuthContextProvider>
+
   </React.StrictMode>
 );
 
