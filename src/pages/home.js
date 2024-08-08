@@ -15,7 +15,7 @@ const Home = () => {
 
     return ( <div>
                 <Carousel/>
-                <table style={user&&{marginTop: "-100px"}}><SlotTime/></table>
+                <SlotTime/>
                 {!user && <SubscriptionPack/>} 
                 <Help/>
     </div> );

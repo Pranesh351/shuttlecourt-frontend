@@ -18,6 +18,7 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 button{
@@ -850,11 +851,13 @@ a:hover, button:hover{
   }
 }
 .getStarted{
-  margin: auto;
-  button{
-    margin: 10px;
-    margin-left: 41%;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    width: max-content;
+    min-height: 30px;
+    padding: 5px;
     border-radius: 0;
   }
 }
@@ -1188,12 +1191,6 @@ a:hover, button:hover{
       }
     }
   }
-  .getStarted{
-    button{
-      margin: auto;
-      margin-left: 25vw;
-    }
-  }
   .subFeatures{
     height: auto;
     span{
@@ -1428,12 +1425,6 @@ a:hover, button:hover{
       }
     }
   }
-  .getStarted{
-    button{
-      margin: auto;
-      margin-left: 25vw;
-    }
-  }
   .subFeatures{
     height: auto;
     span{
@@ -1551,6 +1542,7 @@ a:hover, button:hover{
 }
 @media only screen and (max-Height: 350px){
   .navbarLogout{
+    position: static;
     div{
       img{
         margin-left: -20px;
@@ -1625,7 +1617,14 @@ a:hover, button:hover{
     position: static;
   }
   #popup.navPopupLogin{
-    position: static;
+    position: relative;
+    top: 0px;
+    right: 16px;
+  }
+  #popup.navPopupLogoff{
+    position: relative;
+    top: 0px;
+    right: 16px;
   }
   #popup.helpPopup{
     position: fixed;
