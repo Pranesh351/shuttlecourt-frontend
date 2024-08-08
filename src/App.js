@@ -1,6 +1,5 @@
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import useAuthContext from "./Hooks/useAuthContext";
-//require('dotenv').config();
 
 //pages and component
 import { useState, useEffect } from "react";
@@ -26,7 +25,18 @@ function App() {
   const subscriptions= useSubscriptionContext();
   const [reset, setReset]=useState(false);
 
-  console.log(process.env.REACT_APP_URL);
+  //Slot Context updation while rendering
+  useEffect(()=> 
+    async()=>{
+        const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
+        const json=await response.json();
+
+        if(response.ok){
+            slots.dispatch({type:"SET SLOT", payload:json});
+        }
+    }
+    , []);
+
   useEffect(()=>{
     if(slots && slots.slot){ 
         slots.slot.map(async(ele)=>{
