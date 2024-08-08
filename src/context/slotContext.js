@@ -7,7 +7,6 @@ const slotReducer= (state, action)=>{
         case 'SET SLOT': return {slot: action.payload};
         case 'CREATE SLOT': return {slot:[action.payload, ...state.slot]};
         case 'UPDATE SLOT': return {slot: state.slot.map(element=>{
-            console.log(action.payload);
             if(element._id === action.payload.id){
                 return element= {...element, ...action.payload};
             }

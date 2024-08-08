@@ -94,7 +94,6 @@ const SlotAvailability = (timeValue,courtArr, from, duration, courtNo) => {
         var timeArr=new Array (duration).fill(-1);
         timeArr[0]=[Number(from)]
         for(var i=1; i<duration; i++){
-            console.log(Number(from)+i)
             timeArr[i]=[Number(from)+i]
         }
         var availabilityStatus=false;

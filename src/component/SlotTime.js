@@ -188,8 +188,6 @@ const SlotTime = () => {
             </label><br/>
 
         <div className="slot">
-            {time && console.log(time)}
-            {timeValue&&console.log(timeValue)}
             {timeDisplay.map((val, ind)=>
                 popCenter(<button disabled={!availability || availability[courtNo-1][ind]===0 || time>=timeValue[ind] ? true : false} >
                     <div>{val}{availability && <div>{availability[courtNo-1][ind]}/4</div>}</div>
