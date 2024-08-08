@@ -65,7 +65,7 @@ const SlotTime = () => {
     },[from])
 
     const handleClick= async(from, duration, courtNo, person, slotCost, slotAvailHrs, subscriptionAvailHrs)=>{ 
-        if(Number(from)>timeString()){
+        if(Number(from)>new Date().getHours()){
             const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const json=await response.json();
 
