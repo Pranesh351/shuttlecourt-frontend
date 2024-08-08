@@ -18,7 +18,6 @@ const SlotTime = () => {
     const price=100;
     var dur=[1,2];
     const court=[1,2,3,4];
-    const timeString=()=>Number(new Date().toLocaleString().split(" ")[2]==="pm" && new Date().toLocaleString().split(" ")[1].split(":")[0]!=="12" ? Number(new Date().toLocaleString().split(" ")[1].split(":")[0])+12 : new Date().toLocaleString().split(" ")[1].split(":")[0]);
     const [time, setTime]=useState(new Date().getHours());
     const [availabilityStatus, setAvailabilityStatus]=useState(null);
     const [switchPopup, setSwitchPopup]= useState(false);
@@ -56,7 +55,7 @@ const SlotTime = () => {
 
     
     useEffect(()=>{
-        setTime(timeString())
+        setTime(new Date().getHours())
     },[from, duration, court, person])
 
     useEffect(()=>{
@@ -86,7 +85,7 @@ const SlotTime = () => {
         }else{
             setAvailabilityStatus("Seleted slot exceeded its booking time limit. Please try another slot");
         }
-        setTime(timeString());
+        setTime(new Date().getHours());
         
         
     };
@@ -140,7 +139,7 @@ const SlotTime = () => {
                         </select>
                     </label><br/>
 
-                    <button onClick={()=>{setSwitchPopup(true); setTime(timeString())}} 
+                    <button onClick={()=>{setSwitchPopup(true); setTime(new Date().getHours())}} 
                     disabled={personOption && personOption.length===1 && 
                     personOption[0]===0 || Number(from)<=time}>Book</button>
                 </div>
