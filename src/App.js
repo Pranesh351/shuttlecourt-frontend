@@ -26,15 +26,15 @@ function App() {
   const [reset, setReset]=useState(false);
 
   //Slot Context updation while rendering
-  useEffect(()=> 
-    async()=>{
-        const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
-        const json=await response.json();
+  useEffect(()=> {
+      const fetchdata =async()=>{
+          const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
+          const json=await response.json();
 
-        if(response.ok){
-            slots.dispatch({type:"SET SLOT", payload:json});
-        }
-    }
+          if(response.ok){
+              slots.dispatch({type:"SET SLOT", payload:json});
+          }
+      }; fetchdata();}
     , []);
 
   useEffect(()=>{
