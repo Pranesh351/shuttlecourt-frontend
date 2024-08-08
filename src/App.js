@@ -53,13 +53,14 @@ function App() {
   useEffect(()=>{
 
     if(user && subscriptions && subscriptions.subscription.length>0){ 
-      const addDays=() =>{
-        const newDate = new Date();
-        newDate.setDate(newDate.getDate() + subscriptions.subscription[0].days); 
-        return newDate;
-      }
+        const expireDate=()=>{
+          const newDate = new Date(subscriptions.subscription[0].startTime.split('/')[1]+"/"+subscriptions.subscription[0].startTime.split('/')[0]+"/"+subscriptions.subscription[0].startTime.split('/')[2].split(',')[0]);
+          newDate.setDate(newDate.getDate() + subscriptions.subscription[0].days); 
+          return newDate;
+        }
+
         subscriptions.subscription.map(async(ele)=>{
-            if(new Date()>=addDays()){
+            if(new Date()>=expireDate()){
                 const response= await fetch(process.env.REACT_APP_URL+'/api/subscription/'+ele._id, {
                     method:"DELETE",
                     headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}`}
