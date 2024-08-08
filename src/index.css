@@ -869,8 +869,9 @@ a:hover, button:hover{
 #popup.helpPopup{
   z-index: 2000;
   position: fixed;
-  top: 500px;
-  left: 1050px;
+  bottom: 110px;
+  left: auto;
+  right:95px;
   background-color: white;
   box-shadow: 0.5px 0 5px rgba(0, 0, 0, 0.084);
   border: 1px solid black;
