@@ -18,9 +18,8 @@ const SlotTime = () => {
     const price=100;
     var dur=[1,2];
     const court=[1,2,3,4];
-    const date=new Date().toLocaleString().split(",")[0];
     const timeString=()=>Number(new Date().toLocaleString().split(" ")[2]==="pm" && new Date().toLocaleString().split(" ")[1].split(":")[0]!=="12" ? Number(new Date().toLocaleString().split(" ")[1].split(":")[0])+12 : new Date().toLocaleString().split(" ")[1].split(":")[0]);
-    const [time, setTime]=useState(timeString());
+    const [time, setTime]=useState(new Date().getHours());
     const [availabilityStatus, setAvailabilityStatus]=useState(null);
     const [switchPopup, setSwitchPopup]= useState(false);
     const [courtNo, setCourtNo]= useState(1);
@@ -91,7 +90,6 @@ const SlotTime = () => {
         
         
     };
-    //const getSubscription=()=>{};
 
     const timeDisplay=timeValue.map((val, ind)=>{
         const ele=(val>11 && val<24) ? "PM" : "AM";
@@ -191,7 +189,6 @@ const SlotTime = () => {
             </label><br/>
 
         <div className="slot">
-            {availability && console.log(availability)}
             {time && console.log(time)}
             {timeValue&&console.log(timeValue)}
             {timeDisplay.map((val, ind)=>
