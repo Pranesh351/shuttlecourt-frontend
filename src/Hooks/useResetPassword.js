@@ -9,7 +9,7 @@ const useResetPassword = () => {
         setIsLoading(true);
         setError(null);
 
-        const response= await fetch("api/user/changepassword",{
+        const response= await fetch(process.env.REACT_APP_URL+"/api/user/changepassword",{
             method:"PATCH",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email, password})

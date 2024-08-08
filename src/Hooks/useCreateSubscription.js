@@ -13,7 +13,7 @@ const useCreateSubscription = () => {
         setError(null);
         setInfo(null);
 
-        const response= await fetch("api/subscription/create",{
+        const response= await fetch(process.env.REACT_APP_URL+"/api/subscription/create",{
             method:'POST',
             headers:{'Content-Type':'application/json', 'Authorization': `Bearer ${user.token}`},
             body:JSON.stringify({name, discription, price, startTime, days, duration, offer})

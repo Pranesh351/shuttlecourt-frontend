@@ -13,7 +13,7 @@ const useLogin = () => {
         setIsLoading(true);
         setError(null);
 
-        const response= await fetch("api/user/signin",{
+        const response= await fetch(process.env.REACT_APP_URL+"/api/user/signin",{
             method:'POST',
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify({email, password})
@@ -27,7 +27,7 @@ const useLogin = () => {
             dispatch({type:'LOGIN', payload:json});
             setIsLoading(false);
 
-            const res= await fetch('/api/subscription',{ 
+            const res= await fetch(process.env.REACT_APP_URL+'/api/subscription',{ 
                 method:"GET", 
                 headers:{'Content-Type':'application/json', 'Authorization': `Bearer ${json.token}`} 
             });
@@ -37,7 +37,7 @@ const useLogin = () => {
                 subscriptions.dispatch({type:"SET SUBSCRIPTION", payload:Json});
             }
 
-            const resp= await fetch('/api/slot',{ method:"GET" });
+            const resp= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const jSon=await resp.json();
 
             if(resp.ok){

@@ -36,7 +36,7 @@ const SlotTime = () => {
     const [slotAvailHrs, setSlotAvailHrs]=useState(0);
     const [subscriptionAvailHrs, setSubscriptionAvailHrs]=useState(0);
     const handleRefresh=async()=>{
-        const response= await fetch('/api/slot',{ method:"GET" });
+        const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const json=await response.json();
 
             if(response.ok){
@@ -68,7 +68,7 @@ const SlotTime = () => {
 
     const handleClick= async(from, duration, courtNo, person, slotCost, slotAvailHrs, subscriptionAvailHrs)=>{ 
         if(Number(from)>timeString()){
-            const response= await fetch('/api/slot',{ method:"GET" });
+            const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const json=await response.json();
 
             if(response.ok){

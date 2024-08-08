@@ -12,7 +12,7 @@ const useSingnup = () => {
         setIsLoading(true);
         setError(null);
 
-        const response= await fetch("api/user/signup",{
+        const response= await fetch(process.env.REACT_APP_URL+"/api/user/signup",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({email, password})
@@ -24,7 +24,7 @@ const useSingnup = () => {
             dispatch({type:"LOGIN", payload:json});
             localStorage.setItem('user', JSON.stringify(json));
             setIsLoading(false);
-            const resp= await fetch('/api/slot',{ method:"GET" });
+            const resp= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const jSon=await resp.json();
 
             if(resp.ok){

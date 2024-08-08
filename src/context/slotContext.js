@@ -22,7 +22,7 @@ const SlotProvider = ({children}) => {
     const [state, dispatch]= useReducer(slotReducer, {slot: null});
     useEffect(()=> 
         async()=>{
-            const response= await fetch('/api/slot',{ method:"GET" });
+            const response= await fetch(process.env.REACT_APP_URL+'/api/slot',{ method:"GET" });
             const json=await response.json();
 
             if(response.ok){

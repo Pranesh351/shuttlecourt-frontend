@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import useAuthContext from "./Hooks/useAuthContext";
+//require('dotenv').config();
 
 //pages and component
 import { useState, useEffect } from "react";
@@ -25,11 +26,12 @@ function App() {
   const subscriptions= useSubscriptionContext();
   const [reset, setReset]=useState(false);
 
+  console.log(process.env.REACT_APP_URL);
   useEffect(()=>{
     if(slots && slots.slot){ 
         slots.slot.map(async(ele)=>{
             if(new Date(ele.createdAt).toLocaleDateString() != new Date().toLocaleDateString()){
-              const response= await fetch('/api/slot/'+ele._id, {method:"DELETE",})
+              const response= await fetch(process.env.REACT_APP_URL+'/api/slot/'+ele._id, {method:"DELETE",})
               if(response.ok){
                   slots.dispatch({type:"DELETE SLOT", payload:{_id:ele._id}})
               }
@@ -48,7 +50,7 @@ function App() {
       }
         subscriptions.subscription.map(async(ele)=>{
             if(new Date()>=addDays()){
-                const response= await fetch('/api/subscription/'+ele._id, {
+                const response= await fetch(process.env.REACT_APP_URL+'/api/subscription/'+ele._id, {
                     method:"DELETE",
                     headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}`}
                 })

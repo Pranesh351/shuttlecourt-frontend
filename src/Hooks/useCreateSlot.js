@@ -15,7 +15,7 @@ const useCreateSlot = () => {
         setIsLoading(true);
         setError(null);
 
-        const response= await fetch("api/slot/create",{
+        const response= await fetch(process.env.REACT_APP_URL+"/api/slot/create",{
             method:'POST',
             headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}`},
             body:JSON.stringify({startTime, duration, court, person, cost, availedFreeHrs})
@@ -27,7 +27,7 @@ const useCreateSlot = () => {
         if(response.ok){
             dispatch({type:'CREATE SLOT', payload:json});
             if(subscription && subscription.length>0 && subscription[0].duration>0){
-                const resp= await fetch("api/subscription/"+subscription[0]._id,{
+                const resp= await fetch(process.env.REACT_APP_URL+"/api/subscription/"+subscription[0]._id,{
                     method:'PATCH',
                     headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}`},
                     body:JSON.stringify({duration:subFreeHrs})

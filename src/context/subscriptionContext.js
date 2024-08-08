@@ -25,7 +25,7 @@ const SubscriptionProvider = ({children}) => {
     useEffect(()=> 
         async()=>{
             if(user){
-                const response= await fetch('/api/subscription',{ 
+                const response= await fetch(process.env.REACT_APP_URL+'/api/subscription',{ 
                     method:"GET", 
                     headers:{'Content-Type':'application/json', 'Authorization': `Bearer ${user.token}`} 
                 });

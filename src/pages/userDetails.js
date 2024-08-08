@@ -56,7 +56,7 @@ const UserDetails = () => {
             setError(null);
 
             if(subscription && subscription.length>0 && ele.availedFreeHrs>0){
-                const res= await fetch("/api/subscription/"+subscription[0]._id, {
+                const res= await fetch(process.env.REACT_APP_URL+"/api/subscription/"+subscription[0]._id, {
                     method:"PATCH",
                     headers:{'Content-Type':'application/json', 'Authorization':`Bearer ${user.token}`},
                     body:JSON.stringify({duration:subscription[0].duration+ele.availedFreeHrs})
@@ -69,7 +69,7 @@ const UserDetails = () => {
                 }
                 if(res.ok){
                     dispatch({type:'UPDATE SUBSCRIPTION',payload:{id:subscription[0]._id, duration:subscription[0].duration+ ele.availedFreeHrs}});
-                    const response= await fetch("/api/slot/"+ele._id,{
+                    const response= await fetch(process.env.REACT_APP_URL+"/api/slot/"+ele._id,{
                         method:"DELETE", 
                         headers:{'Content-Type':'application/json', 'Authorization': `Bearer ${user.token}`}
                     })
@@ -92,7 +92,7 @@ const UserDetails = () => {
                     }
                 }
             }else{
-                const response= await fetch("/api/slot/"+ele._id,{
+                const response= await fetch(process.env.REACT_APP_URL+"/api/slot/"+ele._id,{
                     method:"DELETE", 
                     headers:{'Content-Type':'application/json', 'Authorization': `Bearer ${user.token}`}
                 })
