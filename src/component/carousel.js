@@ -30,7 +30,6 @@ const Carousel = () => {
     },[sliderImage])
 
     return ( <div className="carousel">
-        <div>
                 <div className="sliderContainer">
                     <div className="leftArrow" onClick={handlePrevious}>{"<"}</div>
                     <div className="rightArrow" onClick={handleNext}>{">"}</div>
@@ -42,15 +41,14 @@ const Carousel = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="slidePointer">
+                </div>
+                <div className="slidePointer">
                         {content.map((ele, index)=>{
                             return<div onClick={()=>setSliderImage(index)} style={sliderImage===index ? {color: "black"}: {color: "#c7c6c6"}}>.</div>
                         })}
-                    </div>
-                    <div className='getStarted'>{!user && <Link to="/signup"><button>Get Started</button></Link>}</div>
                 </div>
-        </div>
-    </div> );
+                <div className='getStarted'>{!user && <Link to="/signup"><button>Get Started</button></Link>}</div>
+            </div> );
 }
  
 export default Carousel;

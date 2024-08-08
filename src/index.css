@@ -183,8 +183,8 @@ a:hover, button:hover{
   background-color: white;
   width: fit-content;
   text-align: center;
-  margin-top: 300px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   padding: 1%;
   color: black;
   select{
@@ -843,11 +843,10 @@ a:hover, button:hover{
 .slidePointer{
   display: flex;
   justify-content: center;
+  margin-top: 50px;
   div{
-    margin: o 3px;
     cursor: pointer;
     font-size: 100px;
-    margin-top: -80px;
   }
 }
 .getStarted{
@@ -857,7 +856,7 @@ a:hover, button:hover{
   button {
     width: max-content;
     min-height: 30px;
-    padding: 5px;
+    padding: 7px;
     border-radius: 0;
   }
 }
@@ -927,8 +926,6 @@ a:hover, button:hover{
   }
   .slotTime{
     width: 90vw;
-    margin: auto;
-    margin-top: 300px;
   }
   #popup.helpPopup{
     position: fixed;
@@ -1151,8 +1148,6 @@ a:hover, button:hover{
   }
   .slotTime{
     width: 90vw;
-    margin: auto;
-    margin-top: 300px;
   }
   .slot{
     width: 250px;
@@ -1385,8 +1380,6 @@ a:hover, button:hover{
   }
   .slotTime{
     width: 280px;
-    margin: auto;
-    margin-top: 300px;
   }
   .slot{
     width: 250px;
@@ -1537,6 +1530,14 @@ a:hover, button:hover{
     div{
       margin: 0;
       width:100vw;
+    }
+  }
+  .card{
+    margin-bottom: 50px;
+  }
+  .popup{
+    .card{
+      margin-bottom: 0;
     }
   }
 }
